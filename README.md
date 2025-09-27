@@ -12,6 +12,6 @@
 # Тестовые задания
 | Компания  | Описание| Позиция                        | Навык| Ссылка            |
 | --------- |--| ------------------------------- | -- | ----------------- |
-| X5 | Задачи | Аналитик данных, Intern | python| [Решение](#)    |
+| X5 | Задачи | Аналитик данных, Intern | python| [Решение](https://github.com/Shenaeva/Data_analyst/blob/main/test_tasks/x5/x5.ipynb)    |
 | Tinkoff | Вопросы на знание SQL | Аналитик SQL,  Intern            | SQL | [Решение](https://github.com/Shenaeva/Data_analyst/blob/main/test_tasks/Tinkoff/Tinkoff.ipynb) |
 | x | | ...                      | | [...](#)         |
