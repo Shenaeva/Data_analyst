@@ -1,0 +1,203 @@
+openapi: 3.0.0
+info:
+  title: My Lego-Shop API
+  version: 1.0.0
+  description: ''
+servers: 
+  - url: http://localhost:8080/api/v1
+    description: Development server
+paths:
+  /catalog:
+    get:
+      summary: Метод получения списка товаров
+      description: Возвращает витрину интернет-магазина с кратким описанием товаров или ошибку.
+      tags: 
+      - catalog
+      operationId: getAllConstructors
+      responses:
+        '200':
+          description: Успешный ответ с каталогом конструкторов
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Constructors" 
+        'default':
+          description: Все пошло не по плану
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /catalog/{id}:
+    get:
+      summary: Метод получения карточки товара по индентификатору
+      description: Возвращает карточку товара или ошибку.
+      tags: 
+      - catalog
+      operationId: getConstructorById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: идентификатор набора lego конструктора
+          schema:
+            type: string
+          example: 75433
+      responses:
+        '200':
+          description: Успешный ответ с карточкой товара (конструктор lego)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Lego_constructor" 
+        'default':
+          description: Все пошло не по плану
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /cart:
+    post:
+      summary: Метод добавления товара в корзину
+      description: Добавляет товар в корзину или отображает ошибку
+      tags:
+      - cart
+      operationId: addToCart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CartItemRequest"
+      responses:
+        '200':
+          description: Успешный ответ о добавлении товара в корзину
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CartItemResponse" 
+        'default':
+          description: Все пошло не по плану
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        
+            
+      
+      
+      
+      
+      
+components:
+  schemas:
+    Constructor:
+      type: object
+      required: 
+        - id
+        - name
+        - price
+      properties:
+        id:
+          type: integer
+          example: 75433
+          description: Номер набора lego
+        name:
+          type: string
+          example: Корабль Джанго Фетта
+        price:
+          type: number
+          example: 2499
+          description: Описание набора
+        series:
+          type: string
+          example: Star Wars
+          description: Название серии
+    Constructors:
+      type: array
+      items:
+        $ref: "#/components/schemas/Constructor"
+    Lego_constructor:
+      type: object
+      required: 
+        - id
+        - name
+        - price
+        - series
+      properties:
+        id:
+          type: integer
+          example: 75433
+          description: Номер набора lego
+        name:
+          type: string
+          example: Корабль Джанго Фетта
+        price:
+          type: number
+          example: 2499
+          description: Номер набора Lego
+        series:
+          type: string
+          example: Star Wars
+          description: Название серии
+        year:
+          type: integer
+          example: 2025
+          description: Год выпуска набора
+        info:
+          type: string
+          example: 3 минифигурки, 707 деталей, размеры в собранном виде 9 x 21 x 21 см
+          description: Описание набора
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          example: 500
+        message:
+          type: string
+          example: Внутренняя ошибка сервера
+    CartItemRequest:
+      type: object
+      required:
+        - id
+        - quantity
+      properties:
+        id:
+          type: integer
+          example: 75433
+          description: Номер набора Lego
+        quantity:
+          type: integer
+          example: 2
+          description: Количество товара для добавления в корзину
+    CartItemResponse:
+      type: object
+      required: 
+        - id
+        - name
+        - price
+        - quantity
+        - total_price
+      properties:
+        id:
+          type: integer
+          example: 75433
+          description: Номер набора lego
+        name:
+          type: string
+          example: Корабль Джанго Фетта
+        price:
+          type: number
+          example: 2499
+          description: Номер набора Lego
+        quantity:
+          type: integer
+          example: 2
+          description: Количество товара добавлено в корзину
+        total_price:
+          type: number
+          example: 4998
+          description: общая сумма (price × quantity)
