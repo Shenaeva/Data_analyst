@@ -12,11 +12,18 @@
 # Тестовые задания
 Тестовые задания взяты с сайта [No Data No Growth](https://nodatanogrowth.com/test-tasks)
 | Компания  | Описание| Позиция                        | Навык| Ссылка            |
-| --------- |--| ------------------------------- | -- | ----------------- |
+| --------- | -- | ------------------------------- | -- | ----------------- |
 | X5 | Задачи | Аналитик данных, Intern | python| [Решение](https://github.com/Shenaeva/Data_analyst/blob/main/test_tasks/x5/x5.ipynb)    |
 | Tinkoff | Вопросы на знание SQL | Аналитик SQL,  Intern    | SQL | [Решение](https://github.com/Shenaeva/Data_analyst/blob/main/test_tasks/Tinkoff/Tinkoff.ipynb) |
 | Happy Games Studio | Задачи на создание тестовой БД и запросы к ней | Аналитик данных, Intern                      | SQL | [Решение](https://github.com/Shenaeva/Data_analyst/blob/main/test_tasks/happy_games_stydio/script_db_orders.sql)         |
 | Effective Mobile | Тест на знание синтаксиса SQL, создание ER диаграммы, описание Rest API c Sequence UML диаграммой, описание процесса по любой нотации | Системный аналитик, Junior      | SQL, Resr API, BPMN | [Решение](https://github.com/Shenaeva/Data_analyst/tree/main/test_tasks/Effective%20Mobile)         |
+| samokat | Задачи на составление SQL запросов  |  Аналитик данных, Intern | SQL | [Решенае](https://github.com/Shenaeva/Data_analyst/tree/main/test_tasks/samokat) |
+| domclick | Задачи на составление SQL запросов | Аналитик данных, Intern | SQL | [Решение](https://github.com/Shenaeva/Data_analyst/tree/main/test_tasks/domclick) |
 
-
+# Pet projects
+Датасеты взяты с https://www.kaggle.com/
+| Название проекта | Описание | Статус | Стек |
+| -------| ----- | ------- | ------- |
+|[Анализ датасета Student Academic Performance (Synthetic Dataset)](https://github.com/Shenaeva/Data_analyst/tree/main/pet_project/Student_Academic_Performance) | Подготовка и анализ датасета с целью выявления зависимостей успехов студентов в учебе от посещаемости, учебных часов| Завершен | pandas, numpy, seaborn |
+| [Анализ датасета Most Popular Songs on YouTube – 2025](https://github.com/Shenaeva/Data_analyst/tree/main/pet_project/top_youtube) | Проведение анализа датасета и выявление зависимостей | Завершен | pandas, numpy, seaborn |
 
